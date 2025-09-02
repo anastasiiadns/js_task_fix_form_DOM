@@ -12,18 +12,24 @@ for (let i = 0; i < forms.length; i++) {
       input.id = `input-${i}-${j}`;
     }
 
+    if (input.parentNode.querySelector(`label[for="${input.id}"]`)) {
+      continue;
+    }
+
+    if (!input.name) {
+      continue;
+    }
+
     const label = document.createElement('label');
 
-    label.textContent = 'Text';
     label.className = 'field-label';
     label.setAttribute('for', input.id);
 
-    if (input.name) {
-      label.textContent =
-        input.name.charAt(0).toUpperCase() + input.name.slice(1);
+    const text = input.name.charAt(0).toUpperCase() + input.name.slice(1);
 
-      input.placeholder = label.textContent;
-    }
+    label.textContent = text;
+    input.placeholder = text;
+
     input.parentNode.appendChild(label);
   }
 }
