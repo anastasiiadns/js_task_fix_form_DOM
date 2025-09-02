@@ -1,0 +1,2 @@
+for(var e=document.querySelectorAll("form"),t=0;t<e.length;t++)for(var n=e[t].querySelectorAll("input"),a=0;a<n.length;a++){var l=n[a];l.id||(l.id="input-".concat(t,"-").concat(a));var r=document.createElement("label");r.textContent="Text",r.className="field-label",r.setAttribute("for",l.id),l.name&&(r.textContent=l.name.charAt(0).toUpperCase()+l.name.slice(1),l.placeholder=r.textContent),l.parentNode.appendChild(r)}
+//# sourceMappingURL=index.11c22dcc.js.map
