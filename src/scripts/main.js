@@ -2,14 +2,14 @@
 
 const forms = document.querySelectorAll('form');
 
-for (const form of forms) {
-  const inputs = form.querySelectorAll('input');
+for (let i = 0; i < forms.length; i++) {
+  const inputs = forms[i].querySelectorAll('input');
 
-  for (let i = 0; i < inputs.length; i++) {
-    const input = inputs[i];
+  for (let j = 0; j < inputs.length; j++) {
+    const input = inputs[j];
 
     if (!input.id) {
-      input.id = 'input' + i;
+      input.id = `input-${i}-${j}`;
     }
 
     const label = document.createElement('label');
